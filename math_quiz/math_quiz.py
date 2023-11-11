@@ -1,23 +1,18 @@
 import random
 
-
-def function_A(min, max):
+def get_random_number(min, max):
     """
     Random integer.
     """
     return random.randint(min, max)
-
-
-def function_B():
+def random_operation():
     return random.choice(['+', '-', '*'])
-
-
-def function_C(n1, n2, o):
+def create_question(n1, n2, o):
     p = f"{n1} {o} {n2}"
     if o == '+': a = n1 + n2
     elif o == '-': a = n1 - n2
     else: a = n1 * n2
-    return p, a
+    return p, a  
 
 def math_quiz():
     s = 0
@@ -27,9 +22,9 @@ def math_quiz():
     print("You will be presented with math problems, and you need to provide the correct answers.")
 
     for _ in range(t_q):
-        n1 = function_A(1, 10); n2 = function_A(1, 5); o = function_B()
+        n1 = get_random_number(1, 10); n2 = get_random_number(1, 5); o = random_operation()
 
-        PROBLEM, ANSWER = function_C(n1, n2, o)
+        PROBLEM, ANSWER = create_question(n1, n2, o)
         print(f"\nQuestion: {PROBLEM}")
         useranswer = input("Your answer: ")
         useranswer = int(useranswer)
